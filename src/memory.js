@@ -1,13 +1,20 @@
 export class MemoryGame {
 	constructor(cards) {
-		this.cards = cards
+		this.cards = this.shuffleCards(cards)
 		this.pickedCards = []
 		this.pairsClicked = 0
 		this.pairsGuessed = 0
 	}
 
-	shuffleCards() {
-		// ... write your code here
+	shuffleCards(cards) {
+		const deckCards = [...cards]
+		const shuffledCards = []
+		while (deckCards.length > 0) {
+			const choseCardIndex = Math.floor(Math.random() * deckCards.length)
+			shuffledCards.push(deckCards[choseCardIndex])
+			deckCards.splice(choseCardIndex, 1)
+		}
+		return shuffledCards
 	}
 
 	addPickedCards(card) {
