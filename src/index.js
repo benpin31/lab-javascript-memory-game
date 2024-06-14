@@ -1,3 +1,5 @@
+import {MemoryGame} from "./memory.js";
+
 const cards = [
   { name: 'aquaman', img: 'aquaman.jpg' },
   { name: 'batman', img: 'batman.jpg' },
@@ -33,7 +35,7 @@ window.addEventListener('load', (event) => {
     html += `
       <div class="card" data-card-name="${pic.name}">
         <div class="back" name="${pic.img}"></div>
-        <div class="front" style="background: url(img/${pic.img}) no-repeat"></div>
+        <div class="front" style="background: url(../img/${pic.img}) no-repeat"></div>
       </div>
     `;
   });
